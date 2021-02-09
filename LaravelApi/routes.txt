@@ -1,0 +1,15 @@
++-----------+----------------------------+------------------------------------------------------------+
+| Method    | URI                        | Action                                                     |
++-----------+----------------------------+------------------------------------------------------------+
+| POST      | api/login                  | App\Http\Controllers\Auth\LoginController@loginUser        |
+| POST      | api/logout                 | App\Http\Controllers\Auth\LogoutController@logoutUser      |
+| GET|HEAD  | api/profile                | App\Http\Controllers\Admin\DashboardController@index       |
+| POST      | api/profile                | App\Http\Controllers\Admin\DashboardController@store       |
+| GET|HEAD  | api/profile/create         | App\Http\Controllers\Admin\DashboardController@create      |
+| GET|HEAD  | api/profile/{profile}      | App\Http\Controllers\Admin\DashboardController@show        |
+| PUT|PATCH | api/profile/{profile}      | App\Http\Controllers\Admin\DashboardController@update      |
+| DELETE    | api/profile/{profile}      | App\Http\Controllers\Admin\DashboardController@destroy     |
+| GET|HEAD  | api/profile/{profile}/edit | App\Http\Controllers\Admin\DashboardController@edit        |
+| POST      | api/register               | App\Http\Controllers\Auth\RegisterController@registerUser  |
+| GET|HEAD  | sanctum/csrf-cookie        | Laravel\Sanctum\Http\Controllers\CsrfCookieController@show |
++-----------+----------------------------+------------------------------------------------------------+

@@ -1,0 +1,45 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%">
+    <mat-card>
+      <mat-card-content>
+        <h1>About Book Category</h1>
+        <form [formGroup]="form">
+          <p>Enter the informations of the book Category</p>
+          <div fxLayout="row">
+            <div fxFlex="40%" fxFlex.md="60%" fxFlex.sm="50%" fxFlex.xs="100%">
+              <mat-form-field class="full-width">
+                <mat-label>Book category name</mat-label>
+                <input
+                  matInput
+                  placeholder="Enter the category name"
+                  formControlName="category"
+                  type="text"
+                />
+                <mat-error *ngIf="form.controls['category'].hasError('required')">
+                  Please enter the book category
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-label>description</mat-label>
+                <textarea matInput placeholder="book description"
+                formControlName="categorydescription">
+              </textarea>
+              <mat-error *ngIf="form.controls['categorydescription'].hasError('required')">
+                Please enter the book category description
+              </mat-error>
+              </mat-form-field>
+
+              <br>
+              <div fxLayout="row" fxLayoutAlign = "center center" >
+                <button mat-raised-button color="primary" type="submit">Submit</button>
+              </div>
+
+              <br />
+              </div>
+          </div>
+        </form>
+      </mat-card-content>
+    {{form.value|json}}
+    </mat-card>
+  </div>
+</div>

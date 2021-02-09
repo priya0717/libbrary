@@ -1,0 +1,85 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%">
+    <mat-card>
+      <mat-card-content>
+        <h1>About Issued Book</h1>
+        <form [formGroup]="form">
+          <p>Enter the information of the issued book</p>
+          <div fxLayout="row">
+            <div fxFlex="40%" fxFlex.md="60%" fxFlex.sm="50%" fxFlex.xs="100%">
+              <mat-form-field class="full-width">
+                <mat-label>Issued Book Name</mat-label>
+                <input
+                  matInput
+                  placeholder="Enter the issued book name"
+                  formControlName="issuedbook"
+                  type="text"
+                />
+                <mat-error *ngIf="form.controls['issuedbook'].hasError('required')">
+                  Please enter the issuedbook name
+                </mat-error>
+                </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-label>Name of the Student Who get the Book</mat-label>
+                <input
+                  matInput
+                  placeholder="name of student who get the book"
+                  formControlName="bookgetstudent"
+                  type="text"
+                />
+                <mat-error *ngIf="form.controls['bookgetstudent'].hasError('required')">
+                  Please enter the student name who get the book
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-label>student class</mat-label>
+                <input
+                  matInput
+                  placeholder="Enter the student deparment"
+                  formControlName="studentclass"
+                  type="text"
+                />
+                <mat-error *ngIf="form.controls['studentclass'].hasError('required')">
+                  Please enter the student class
+                </mat-error>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                  <mat-label>book issued date</mat-label>
+                  <input
+                    matInput
+                    placeholder="Enter the book issued date"
+                    formControlName="issueddate"
+                    type="text"
+                  />
+                  <mat-error *ngIf="form.controls['issueddate'].hasError('required')">
+                    Please enter the book issued date
+                  </mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="full-width">
+                    <mat-label>issued book ID</mat-label>
+                    <input
+                      matInput
+                      placeholder="Enter the issued book id"
+                      formControlName="bookissuedid"
+                      type="text"
+                    />
+                    <mat-error *ngIf="form.controls['bookissuedid'].hasError('required')">
+                      Please enter the book issued ID
+                    </mat-error>
+                    </mat-form-field>
+                  <br>
+              <br>
+              <div fxLayout="row" fxLayoutAlign = "center center" >
+                <button mat-raised-button color="primary" type="submit">submit</button>
+              </div>
+
+              <br />
+              <br>
+              </div>
+          </div>
+        </form>
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+</div>

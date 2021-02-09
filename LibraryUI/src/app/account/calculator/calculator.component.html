@@ -1,0 +1,20 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%">
+    <mat-card>
+      <mat-card-content>
+        <h2>Calculator</h2>
+
+        <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+          <div fxFlex="35%" fxFlex.sm="95%" fxFlex.xs="95%">
+            <div class="profile-card">
+              <input type="number" [(ngModel)]="a">
+              <input type="number" [(ngModel)]="b">
+              {{a+b}}
+            </div>
+          </div>
+          <div fxFlex></div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

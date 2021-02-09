@@ -1,0 +1,65 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%">
+    <mat-card>
+      <mat-card-content>
+        <h2>About Book</h2>
+        <form [formGroup]="form">
+          <p>Enter the informations of the book</p>
+          <div fxLayout="row" fxLayoutGap>
+            <div fxFlex="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+              <mat-form-field class="full-width">
+                <mat-label>Book ID</mat-label>
+                <input matInput placeholder="Enter the book ID" formControlName="bookid" type="text" />
+                <mat-error *ngIf="form.controls['bookid'].hasError('required')"> Please enter the book id </mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="full-width">
+                <mat-label>Book title</mat-label>
+                <input matInput placeholder="Enter the book name" formControlName="title" type="text" />
+                <mat-error *ngIf="form.controls['title'].hasError('required')"> Please enter the book name </mat-error>
+                <mat-error *ngIf="form.controls['title'].hasError('maxlength')">  name must be less than 50
+                  characters </mat-error>
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-label>Book Author Name</mat-label>
+                <input matInput placeholder="Enter the author name" formControlName="bookauthor" type="text" />
+                <mat-error *ngIf="form.controls['bookauthor'].hasError('required')"> Please enter the book author name
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-label>Book location</mat-label>
+                <input matInput placeholder="Enter the location of the book" formControlName="location" type="text" />
+                <mat-error *ngIf="form.controls['location'].hasError('required')"> Please enter the location of the book
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-label>description</mat-label>
+                <textarea matInput placeholder="book description"
+                formControlName="description">
+              </textarea>
+              <mat-error *ngIf="form.controls['description'].hasError('required')">
+                Please enter the book category description
+              </mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="full-width">
+                <mat-label>select the book category</mat-label>
+                <mat-select formControlName="categoryofbook">
+                  <mat-option *ngFor="let category of categories"
+                    [value]="category.value">
+                    {{category.text}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign = "center center" >
+            <button mat-raised-button color="primary" type="submit">ADD BOOK</button>
+          </div>
+        </form>
+        {{form.value|json}}
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

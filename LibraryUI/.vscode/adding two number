@@ -1,0 +1,5 @@
+template: `
+    <h1>Adding inputBox Numbers</h1>
+    <p>Num1: <input [(ngModel)]="num1"></p>
+    <p>Num2: <input [(ngModel)]="num2"></p>
+    <p>The sum is: {{ num1 + num2 }}</p> `

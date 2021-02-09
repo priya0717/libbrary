@@ -1,0 +1,101 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%">
+    <mat-card>
+      <mat-card-content>
+        <h2>My Profile</h2>
+        <form [formGroup]="form">
+          <p>Enter the informations of the student</p>
+          <div fxLayout="row">
+            <div fxFlex="40%" fxFlex.md="60%" fxFlex.sm="50%" fxFlex.xs="100%">
+              <mat-form-field class="full-width">
+                <mat-label>Student Name</mat-label>
+                <input
+                  matInput
+                  placeholder="Enter student Name"
+                  formControlName="studentname"
+                  type="text"
+                />
+                <mat-error *ngIf="form.controls['studentname'].hasError('required')">
+                  Please enter a Student Name
+                </mat-error>
+                <mat-error *ngIf="form.controls['studentname'].hasError('maxlength')">
+                  student name must be less than 10 characters
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-label>Register number</mat-label>
+                <input
+                  matInput
+                  placeholder="Enter registernumber"
+                  formControlName="registernumber"
+                  type="text"
+                />
+                <mat-error *ngIf="form.controls['studentname'].hasError('required')">
+                  Please enter a Student register number
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-label>email</mat-label>
+                <input
+                  matInput
+                  placeholder="Enter email address"
+                  formControlName="email"
+                  type="email"
+                />
+                <mat-error *ngIf="form.controls['email'].hasError('required')">
+                  Please enter a valid email address
+                </mat-error>
+              </mat-form-field>
+              <br>
+              <mat-form-field class="full-width">
+                <mat-label>select the department</mat-label>
+                <mat-select formControlName="department">
+                  <mat-option value="cs">computer science</mat-option>
+                  <mat-option value="mat">maths</mat-option>
+                  <mat-option value="B.com">B.com</mat-option>
+                  <mat-option value="CA">B.com(CA)</mat-option>
+                  <mat-option value="tam">BA tamil</mat-option>
+                  <mat-option value="eng">BA English</mat-option>
+                  <mat-option value="BBA">BBA aviation</mat-option>
+                  <mat-option value="che">chemistry</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-label>select the year</mat-label>
+                <mat-select formControlName="year">
+                  <mat-option value="first">first year</mat-option>
+                  <mat-option value="second">second year</mat-option>
+                  <mat-option value="thrid">third year</mat-option>
+                  <mat-option value="final">final year</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <br>
+              <br>
+             <mat-radio-group aria-label="Select an option" formControlName=sex>
+                <mat-radio-button value="male" color="primary">male
+                  <mat-icon mat-list-icon>person</mat-icon>
+                </mat-radio-button>
+                <mat-radio-button value="female" color="primary">female
+                  <mat-icon name="woman">person</mat-icon>
+                </mat-radio-button>
+
+              </mat-radio-group>
+              <br>
+              <br>
+              <br>
+              <button
+                mat-raised-button
+                color="primary"
+                [disabled]="form.invalid || disableSubmit"
+                (click)="changePassword()"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </form>
+      </mat-card-content>
+      {{form.value|json}}
+    </mat-card>
+  </div>
+</div>

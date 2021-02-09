@@ -1,0 +1,34 @@
+<table mat-table [dataSource]="bookdatasource" matSort class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- category id  Column -->
+  <ng-container matColumnDef="bookcategoryid">
+    <th mat-header-cell *matHeaderCellDef> Book Name</th>
+    <td mat-cell *matCellDef="let element"> {{element.bookcategoryid}} </td>
+  </ng-container>
+
+  <!-- category name Column -->
+  <ng-container matColumnDef="bookcategoryname">
+    <th mat-header-cell *matHeaderCellDef> Category name</th>
+    <td mat-cell *matCellDef="let element"> {{element.bookcategoryname}} </td>
+  </ng-container>
+
+  <!-- category edit Column -->
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef> Edit</th>
+    <td mat-cell *matCellDef="let element"> <button mat-raised-button color="primary" type="submit">Edit</button> </td>
+  </ng-container>
+
+  <!-- category Delete Column -->
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef> Delete </th>
+    <td mat-cell *matCellDef="let element"> <button mat-raised-button color="warn" type="submit"> Delete </button> </td>
+  </ng-container>
+
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
