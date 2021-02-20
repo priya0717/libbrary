@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class userLogs extends Model
+class UserLog extends Model
 {
     //
     protected $fillable = ['message','ip_address','user_id'];
