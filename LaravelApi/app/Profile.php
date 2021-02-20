@@ -8,7 +8,7 @@ class Profile extends Model
 {
     //
     protected $fillable = [
-        'path','file_name','user_id'
+        'path', 'file_name', 'user_id'
     ];
 
     public function user(){
