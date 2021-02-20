@@ -22,6 +22,7 @@ class CreateIssueBooksTable extends Migration
             $table->dateTime('returned_at');
             $table->integer('fine_amount');
             $table->boolean('find_paid');
+            $table->foreignId('created_by');
             $table->timestamps();
             $table->foreign('issued_by')->references('id')->on('users');
             $table->foreign('issued_to')->references('id')->on('users');

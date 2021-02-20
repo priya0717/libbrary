@@ -13,11 +13,11 @@ class CreateBooktagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('book_pattags', function (Blueprint $table) {
+        Schema::create('book_tags', function (Blueprint $table) {
             $table->id();
             $table->foreignId('book_id');
             $table->foreignId('tag_id');
-            $table->foreignId('createdBy');
+            $table->foreignId('created_by');
             $table->timestamps();
 
             $table->foreign('book_id')->references('id')->on('books');

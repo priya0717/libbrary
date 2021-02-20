@@ -13,7 +13,7 @@ class CreateOutwardbooksTable extends Migration
      */
     public function up()
     {
-        Schema::create('outwardbooks', function (Blueprint $table) {
+        Schema::create('outward_books', function (Blueprint $table) {
             $table->id();
             $table->string("outward_no")->nullable();
             $table->string("outwardType");
@@ -33,6 +33,6 @@ class CreateOutwardbooksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('outwardbooks');
+        Schema::dropIfExists('outward_books');
     }
 }

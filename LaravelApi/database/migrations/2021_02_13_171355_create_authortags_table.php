@@ -17,6 +17,7 @@ class CreateAuthortagsTable extends Migration
             $table->id();
             $table->foreignId('author_id');
             $table->foreignId('tag_id');
+            $table->foreignId('created_by');
             $table->timestamps();
 
             $table->foreign('author_id')->references('id')->on('authors');
