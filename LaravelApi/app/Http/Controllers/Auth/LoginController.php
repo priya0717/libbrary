@@ -43,7 +43,7 @@ class LoginController extends Controller
             'token'=> $tokenObj,
             'expiredafter'=>config('sanctum.expiration')
             ]);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return response()->json(['message' => $e->getMessage()]);
         }
 
