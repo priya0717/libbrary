@@ -5,7 +5,7 @@ namespace App\Listeners;
 use App\Events\EventExample;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
-use App\userLogs;
+use App\UserLog;
 
 class ListenerExample
 {
@@ -29,7 +29,7 @@ class ListenerExample
     {
         //
         //dd($event);
-        $user = userLogs::create([
+        $user = UserLog::create([
             'message' => 'Logged in as user with mail id '.$event->user->email,
             'ip_address' => $_SERVER['REMOTE_ADDR'],
             'user_id' => $event->user->id
