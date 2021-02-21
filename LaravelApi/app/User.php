@@ -41,7 +41,7 @@ class User extends Authenticatable
     ];
 
     public function userlog(){
-        return $this->hasMany('App\userLogs');
+        return $this->hasMany('App\UserLog');
     }
 
     public function profile(){

@@ -14,4 +14,12 @@ class Author extends Model
     {
         return $this->belongsTo(User::class, 'created_by');
     }
+
+    /**
+     * Get all of the tags for the post.
+     */
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable')->withPivot(['meta'])->withTimestamps();
+    }
 }
